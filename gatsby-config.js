@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ["gatsby-plugin-antd", "gatsby-plugin-typescript"],
+  plugins: [
+    "gatsby-plugin-antd",
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-mdx",
+  ],
 }
