@@ -10,5 +10,6 @@ module.exports = {
     "gatsby-plugin-antd",
     "gatsby-plugin-typescript",
     "gatsby-plugin-mdx",
+    "gatsby-plugin-sass",
   ],
 }
