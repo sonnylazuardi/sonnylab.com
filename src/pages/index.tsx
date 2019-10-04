@@ -160,7 +160,7 @@ export default () => {
           </Row>
         </div>
       </Content>
-      <Footer className="footer">Designed with ❤️ in Singapore</Footer>
+      <Footer className="footer">&copy; 2019 | Designed with ❤️ in Singapore</Footer>
       <div className="cursor" ref={cursorEl}>
         <div className="cursor-dot" />
       </div>
