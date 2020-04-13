@@ -9,7 +9,15 @@ module.exports = {
   plugins: [
     "gatsby-plugin-antd",
     "gatsby-plugin-typescript",
-    "gatsby-plugin-mdx",
+    `gatsby-plugin-mdx`,
     "gatsby-plugin-sass",
+    `gatsby-plugin-twitter`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: `${__dirname}/src/pages/`,
+      },
+    },
   ],
 }

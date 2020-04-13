@@ -1,0 +1,36 @@
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+
+const About = () => {
+  const data = useStaticQuery(graphql`
+    {
+      figmaDocument {
+        pages {
+          children {
+            name
+            children {
+              name
+              characters
+            }
+          }
+        }
+      }
+    }
+  `)
+  return (
+    <div>
+      <h1>About</h1>
+      <p>
+        {
+          data.figmaDocument.pages
+            .find((item: any) => item.children[0].name === "About")
+            .children[0].children.find(
+              (item: any) => item.name === "Description"
+            ).characters
+        }
+      </p>
+    </div>
+  )
+}
+
+export default About
