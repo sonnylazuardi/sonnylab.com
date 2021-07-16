@@ -1,57 +1,97 @@
 import Head from 'next/head';
 import tw from 'twin.macro';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import Link from 'next/link';
+const Ball = dynamic(() => import('~components/Ball'), {
+  ssr: false
+});
 
-export default function Home() {
+const Home = () => {
   return (
-    <div css={tw`bg-white text-black`}>
+    <div css={tw`bg-black min-h-screen text-white font-inter`}>
       <Head>
-        <title>Sonnylab</title>
+        <title>Sonny Lazuardi</title>
       </Head>
+      <div
+        css={tw`fixed top-0 left-0 right-0 bottom-0 z-0`}
+        style={{
+          background: `url('./images/darkbg.svg') center center`,
+          backgroundSize: 'cover'
+        }}
+      ></div>
+      <Ball />
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className="card">
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+      <div css={tw`fixed top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
+        <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
+          <div css={tw`pb-16`}>
+            <div css={tw`text-base font-extrabold text-gray-300`}>HI THERE 👋 I'M</div>
+            <div css={tw`md:text-8xl text-7xl font-black tracking-tighter`}>
+              <div css={tw`md:-mb-4 -mb-2`}>Sonny</div>
+              <div css={tw``}>Lazuardi</div>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <main css={tw`absolute top-0 left-0 right-0 z-20 pointer-events-none`}>
+        <div css={tw`container mx-auto`}>
+          <div css={tw`h-screen relative`}>
+            <div
+              css={tw`absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 backdrop-filter backdrop-blur-lg h-64 rounded-t-3xl pointer-events-auto p-10 mx-4 md:mx-0 flex items-center`}
+            >
+              <div css={tw`flex flex-col md:flex-row max-w-lg mx-auto space-y-4 md:space-x-4 md:space-y-0`}>
+                <div css={tw``}>
+                  <div
+                    css={tw`rounded-full overflow-hidden width[50px] height[50px] md:width[106px] md:height[106px] `}
+                  >
+                    <Image src="/images/pp.jpg" width={106} height={106} />
+                  </div>
+                </div>
+                <div css={tw``}>
+                  <div css={tw`text-sm md:text-base text-gray-300`}>
+                    <p css={tw`mb-2`}>
+                      I'm a <Bold>Design / UX Engineer</Bold>. I merge <Bold>technical skills</Bold> with{' '}
+                      <Bold>design knowledge</Bold> to create <Bold>innovative products</Bold> that drive business.
+                    </p>
+                    <p>Currently lead UX Engineer based in Singapore.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div css={tw`bg-black min-h-screen pointer-events-auto`}>
+          <div css={tw`container mx-auto pt-20`}>
+            <div
+              css={tw`flex flex-wrap max-w-lg justify-center space-x-4 mx-auto`}
+              style={{
+                background: `url('./images/highlight.svg') no-repeat`,
+                backgroundSize: 'stretch'
+              }}
+            >
+              <Link href="https://twitter.com/sonnylazuardi">
+                <Chip>Twitter</Chip>
+              </Link>
+              <Chip>Github</Chip>
+              <Chip>Figma</Chip>
+              <Chip>LinkedIn</Chip>
+              <Chip>Product Hunt</Chip>
+              <Chip>Polywork</Chip>
+              <Chip>Email</Chip>
+            </div>
+          </div>
+        </div>
+        <div css={tw``}></div>
       </main>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+      <footer></footer>
     </div>
   );
-}
+};
+
+const Bold = tw.span`font-bold text-white`;
+
+const Chip = tw.div`px-6 py-2 bg-gray-800 font-semibold rounded-lg mb-4 hover:bg-gray-700 cursor-pointer`;
+
+export default Home;
