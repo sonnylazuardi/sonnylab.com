@@ -4,7 +4,7 @@
 
 ![ss](ss.png)
 
-new sonnylab.com website built with next and twin macro
+new sonnylab.com website built with Next.js, React Three Fibre, and Tailwind with Twin Macro
 
 ## 🚀 Quick start
 
