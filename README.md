@@ -18,7 +18,7 @@ new sonnylab.com website built with next and twin macro
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:3000`!
+    Your site is now running at `http://localhost:8080`!
 
 ## 💫 Deploy
 
