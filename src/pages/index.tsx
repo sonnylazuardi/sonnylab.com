@@ -20,7 +20,7 @@ const Home = () => {
           backgroundSize: 'cover'
         }}
       ></div>
-      {/* <Ball /> */}
+      <Ball />
 
       <div css={tw`fixed top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
         <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
