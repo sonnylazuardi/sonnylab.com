@@ -11,6 +11,7 @@ const App = ({ Component, pageProps = {} }) => {
           rel="stylesheet"
         />
         <link rel="icon" href="https://fav.farm/🧑‍💻" />
+        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
