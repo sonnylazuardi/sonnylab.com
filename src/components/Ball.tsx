@@ -66,7 +66,7 @@ const Ball = (props: Props) => {
   return (
     <Canvas
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         zIndex: 0
       }}

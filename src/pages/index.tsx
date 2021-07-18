@@ -14,31 +14,30 @@ const Home = () => {
         <title>Sonny Lazuardi</title>
       </Head>
       <div
-        css={tw`absolute top-0 left-0 right-0 bottom-0 z-0`}
+        css={tw`relative h-screen`}
         style={{
           background: `url('./images/darkbg.svg') center center`,
           backgroundSize: 'cover'
         }}
-      ></div>
-      <Ball />
+      >
+        <Ball />
 
-      <div css={tw`absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
-        <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
-          <div css={tw`pb-16`}>
-            <div css={tw`text-base font-extrabold text-gray-300`}>HI THERE 👋 I'M</div>
-            <div css={tw`md:text-8xl text-7xl font-black tracking-tighter`}>
-              <div css={tw`md:-mb-4 -mb-2`}>Sonny</div>
-              <div css={tw``}>Lazuardi</div>
+        <div css={tw`absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
+          <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
+            <div css={tw`pb-16`}>
+              <div css={tw`text-base font-extrabold text-gray-300`}>HI THERE 👋 I'M</div>
+              <div css={tw`md:text-8xl text-7xl font-black tracking-tighter`}>
+                <div css={tw`md:-mb-4 -mb-2`}>Sonny</div>
+                <div css={tw``}>Lazuardi</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <main css={tw`relative z-20 pointer-events-none`}>
-        <div css={tw`container mx-auto`}>
-          <div css={tw`h-screen relative`}>
+        <div css={tw`absolute bottom-0 left-0 right-0`}>
+          <div css={tw`container mx-auto`}>
             <div
-              css={tw`absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 backdrop-filter backdrop-blur-lg h-64 rounded-t-3xl pointer-events-auto p-10 mx-4 md:mx-0 flex items-center`}
+              css={tw`bg-black bg-opacity-60 backdrop-filter backdrop-blur-lg h-64 rounded-t-3xl pointer-events-auto p-10 mx-4 md:mx-0 flex items-center`}
             >
               <div css={tw`flex flex-col md:flex-row max-w-lg mx-auto space-y-4 md:space-x-4 md:space-y-0`}>
                 <div css={tw``}>
@@ -61,7 +60,10 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div css={tw`bg-black min-h-screen pointer-events-auto`}>
+      </div>
+
+      <main css={tw`relative z-20`}>
+        <div css={tw`bg-black min-h-screen`}>
           <div css={tw`container mx-auto pt-20 relative`}>
             <div css={tw`absolute top[120px] left-0 right-0 z-0`}>
               <div
