@@ -14,7 +14,7 @@ const Home = () => {
         <title>Sonny Lazuardi</title>
       </Head>
       <div
-        css={tw`fixed top-0 left-0 right-0 bottom-0 z-0`}
+        css={tw`absolute top-0 left-0 right-0 bottom-0 z-0`}
         style={{
           background: `url('./images/darkbg.svg') center center`,
           backgroundSize: 'cover'
@@ -22,7 +22,7 @@ const Home = () => {
       ></div>
       <Ball />
 
-      <div css={tw`fixed top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
+      <div css={tw`absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
         <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
           <div css={tw`pb-16`}>
             <div css={tw`text-base font-extrabold text-gray-300`}>HI THERE 👋 I'M</div>
