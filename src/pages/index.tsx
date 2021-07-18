@@ -96,7 +96,7 @@ const Home = () => {
               </Link>
             </div>
 
-            <div css={tw`text-center mt-20 mb-12 text-5xl font-black`}>Featured Works</div>
+            <div css={tw`text-center mt-20 mb-12 text-3xl md:text-5xl font-black`}>Featured Works</div>
 
             <div css={tw`grid px-4 md:grid-cols-2 md:px-0 gap-6 pb-20`}>
               <Link href="https://flipbook.sonnylab.com/">
@@ -141,7 +141,9 @@ const Home = () => {
         <div css={tw``}></div>
       </main>
 
-      <footer css={tw`h-20 relative z-20 flex justify-center items-center`}>Designed with ❤️ in Singapore</footer>
+      <footer css={tw`h-20 relative z-20 flex justify-center items-center bg-gray-800 text-gray-300`}>
+        Designed with ❤️ in Singapore
+      </footer>
       <style jsx>
         {`
           @keyframes pulse {
