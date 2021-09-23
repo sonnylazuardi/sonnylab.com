@@ -9,7 +9,7 @@ const baubleMaterial = new THREE.MeshLambertMaterial({
   color: '#040307',
   emissive: 'black'
 });
-const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
+const sphereGeometry = new THREE.SphereGeometry(1, 8, 8);
 const baubles = [...Array(50)].map((_, i) => {
   const args = [0.6, 0.6, 0.6, 0.8, 0.8, 1][Math.floor(Math.random() * 6)];
   return {
@@ -67,8 +67,10 @@ const Ball = (props: Props) => {
     <Canvas
       style={{
         position: 'absolute',
-        top: 0,
-        zIndex: 0
+        top: -200,
+        zIndex: 0,
+        width: '100%',
+        height: '60%'
       }}
       dpr={1.5}
       gl={{ alpha: true, stencil: false, depth: false, antialias: true }}
