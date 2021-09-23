@@ -3,23 +3,25 @@ import tw from 'twin.macro';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ErrorBoundary } from 'react-error-boundary';
 const Ball = dynamic(() => import('~components/Ball'), {
   ssr: false
 });
 
 const Home = () => {
+  const renderBall = () => {
+    try {
+      return <Ball />;
+    } catch (e) {
+      return null;
+    }
+  };
   return (
     <div css={tw`bg-black min-h-screen text-white font-inter`}>
       <Head>
         <title>Sonny Lazuardi</title>
       </Head>
       <div css={tw`relative h-screen bg-gray-900`}>
-        <div css={tw`relative w-full max-w-2xl mx-auto h-screen`}>
-          <ErrorBoundary FallbackComponent={null} onReset={() => {}}>
-            <Ball />
-          </ErrorBoundary>
-        </div>
+        <div css={tw`relative w-full max-w-2xl mx-auto h-screen`}>{renderBall()}</div>
 
         <div css={tw`absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
           <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
