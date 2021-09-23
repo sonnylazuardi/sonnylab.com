@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ErrorBoundary } from 'react-error-boundary';
 const Ball = dynamic(() => import('~components/Ball'), {
   ssr: false
 });
@@ -13,20 +14,16 @@ const Home = () => {
       <Head>
         <title>Sonny Lazuardi</title>
       </Head>
-      <div
-        css={tw`relative h-screen bg-gray-900`}
-        // style={{
-        //   background: `url('./images/darkbg.svg') center center`,
-        //   backgroundSize: 'cover'
-        // }}
-      >
+      <div css={tw`relative h-screen bg-gray-900`}>
         <div css={tw`relative w-full max-w-2xl mx-auto h-screen`}>
-          <Ball />
+          <ErrorBoundary FallbackComponent={null} onReset={() => {}}>
+            <Ball />
+          </ErrorBoundary>
         </div>
 
         <div css={tw`absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none`}>
           <div css={tw`text-center flex flex-col justify-center items-center h-screen`}>
-            <div css={tw`pb-24`}>
+            <div css={tw`pb-32 md:pb-24`}>
               <div css={tw`text-base font-extrabold text-gray-300`}>HI THERE 👋 I'M</div>
               <div css={tw`md:text-8xl text-7xl font-black tracking-tighter`}>
                 <div css={tw`md:-mb-4 -mb-2`}>Sonny</div>
@@ -38,9 +35,7 @@ const Home = () => {
 
         <div css={tw`absolute bottom-0 left-0 right-0`}>
           <div css={tw`container mx-auto`}>
-            <div
-              css={tw`bg-black bg-opacity-20 backdrop-filter backdrop-blur-lg h-64 rounded-t-3xl pointer-events-auto p-10 mx-4 md:mx-0 flex items-center`}
-            >
+            <div css={tw` h-72 md:h-72 pointer-events-auto p-10 mx-4 md:mx-0 pb-20 md:pb-0 flex items-center`}>
               <div css={tw`flex flex-col md:flex-row max-w-lg mx-auto space-y-4 md:space-x-4 md:space-y-0`}>
                 <div css={tw``}>
                   <div
@@ -65,7 +60,7 @@ const Home = () => {
       </div>
 
       <main css={tw`relative z-20`}>
-        <div css={tw`bg-black min-h-screen`}>
+        <div css={tw`bg-gray-900 min-h-screen`}>
           <div css={tw`container mx-auto pt-20 relative`}>
             <div css={tw`absolute top[120px] left-0 right-0 z-0`}>
               <div
@@ -180,10 +175,10 @@ const Home = () => {
 };
 
 const Bold = tw.span`font-bold text-white`;
-const Card = tw.div`min-height[150px] bg-gray-900 rounded-lg p-6 cursor-pointer`;
+const Card = tw.div`min-height[150px] bg-gray-800 rounded-lg p-6 cursor-pointer`;
 const CTitle = tw.div`font-semibold mb-1`;
 const CDesc = tw.div`text-gray-300 text-sm md:text-base`;
-const CTag = tw.div`bg-black px-3 py-1 text-xs font-semibold rounded-md text-gray-300`;
-const Chip = tw.div`px-6 py-2 bg-black font-semibold rounded-lg mb-4 hover:text-gray-400 cursor-pointer`;
+const CTag = tw.div`bg-gray-900 px-3 py-1 text-xs font-semibold rounded-md text-gray-300`;
+const Chip = tw.div`px-6 py-2 bg-gray-900 font-semibold rounded-lg mb-4 hover:text-gray-400 cursor-pointer`;
 
 export default Home;

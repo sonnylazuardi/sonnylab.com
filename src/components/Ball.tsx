@@ -67,10 +67,10 @@ const Ball = (props: Props) => {
     <Canvas
       style={{
         position: 'absolute',
-        top: -200,
+        top: -250,
         zIndex: 0,
         width: '100%',
-        height: '60%'
+        height: '70%'
       }}
       dpr={1.5}
       gl={{ alpha: true, stencil: false, depth: false, antialias: true }}
