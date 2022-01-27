@@ -25,7 +25,7 @@
     "react-postprocessing": "1.4.0",
     "styled-components": "^5.3.0",
     "tailwindcss": "^2.2.4",
-    "three": "0.130.1",
+    "three": "0.137.0",
     "twin.macro": "^2.6.2",
     "use-cannon": "^0.5.3"
   },
